@@ -5,24 +5,30 @@ import Link from 'next/link'
 import { MaxWidthWrapper } from './MaxWidthWrapper'
 import { Button } from './Button'
 import { Dropdown } from './Dropdown'
-import Image from 'next/image'
 import { useState } from 'react'
+import { Open_Sans } from 'next/font/google'
+import { twMerge } from 'tailwind-merge'
+
+
+const OpenSans = Open_Sans({
+  subsets: ['latin']
+})
 
 export function Header () {
   const [ openedDropdown, setOpenedDropdown ] = useState<'Projects' | 'Roblox Projects' | ''>('')
 
   return (
-    <header className='z-20 fixed w-full py-3 px-6 bg-neutral-900 bg-opacity-50 backdrop-blur-sm shadow-md select-none'>
+    <header className='z-10 fixed w-full py-3 px-6 bg-neutral-900 bg-opacity-50 backdrop-blur-sm shadow-md select-none'>
       <MaxWidthWrapper className='mx-auto flex items-center'>
         <div className='w-1/4 flex justify-start'>
           <Link href='/' className='hover:animate-pulsating-glow'>
-            <Image
-              className='w-20'
-              height={500}
-              width={500}
-              src='/logo.svg'
-              alt='Site Logo'
-            />
+            <h1 className={
+              twMerge(
+                OpenSans.className,
+                'text-white text-[1.5em]'
+            )}>
+                kunosyn
+              </h1>
           </Link>
         </div>
 
@@ -63,7 +69,7 @@ export function Header () {
             </li>
           </Dropdown>
 
-          <Button className='z-30 flex items-center gap-2 group' variant='nav-button'>
+          <Button className='flex items-center gap-2 group' variant='nav-button'>
             Past Employers
             <BookUser className='w-5 h-5 text-neutral-300 group-hover:text-white' />
           </Button>

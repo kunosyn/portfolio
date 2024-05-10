@@ -11,11 +11,11 @@ function cn(...inputs: ClassValue[]) {
 export const BackgroundGradientAnimation = ({
   gradientBackgroundStart = 'rgb(200, 129, 240)',
   gradientBackgroundEnd = 'rgb(225, 171, 255)',
-  firstColor = '215, 215, 215', // '255, 237, 166',
-  secondColor = '215, 215, 215', // '171, 130, 184',
-  thirdColor = '215, 215, 215', // '100, 220, 255',
-  fourthColor = '215, 215, 215', // '200, 50, 50',
-  fifthColor = '215, 215, 215', // '255, 102, 163',
+  firstColor = '215, 215, 215',
+  secondColor = '215, 215, 215',
+  thirdColor = '215, 215, 215',
+  fourthColor = '215, 215, 215',
+  fifthColor = '215, 215, 215',
   pointerColor = '215, 215, 215',
   size = '45%',
   blendingValue = 'hard-light',
@@ -45,6 +45,7 @@ export const BackgroundGradientAnimation = ({
   const [curY, setCurY] = useState(0)
   const [tgX, setTgX] = useState(0)
   const [tgY, setTgY] = useState(0)
+
   useEffect(() => {
     document.body.style.setProperty(
       '--gradient-background-start',
