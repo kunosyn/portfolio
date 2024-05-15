@@ -11,7 +11,7 @@ export default function NotFound () {
           <h1 className='text-8xl animate-glow-flicker'>404</h1>
           <h1 className='text-4xl animate-glow-flicker'>PAGE NOT FOUND</h1>
           
-          <div className='flex flex-col gap-3 justify-center text-center items-center mt-20'>
+          <div className='flex flex-col gap-6 justify-center text-center items-center mt-10'>
             <p className='w-[400px]'>Uh oh, we couldn&apos;t find the page you&apos;re looking for! Make sure the URL you entered is correct, or go back to our home page.</p>
             
             <Link href='/'>

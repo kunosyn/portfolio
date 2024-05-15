@@ -23,7 +23,7 @@ export function Dropdown ({
 
   return (
     <div className='z-20 flex flex-col items-center'>
-      <Button onClick={handleClick} className='group flex items-center gap-2' variant='nav-button'>
+      <Button onClick={handleClick} className='group flex items-center justify-center gap-2' variant='nav-button'>
         {text}
         
         <ChevronDown className={clsx('z-30 w-5 h-5 transition-all text-neutral-300 group-hover:text-white', {
@@ -31,7 +31,7 @@ export function Dropdown ({
         })} />
       </Button>
 
-      <ul className={clsx('z-[21] absolute mt-[-7px] px-3 pb-1.5 flex flex-col gap-2 items-center pt-[60px] transition-all', {
+      <ul className={clsx('z-[21] absolute flex flex-col gap-2 items-center transition-all mt-[60px]', { // px-3 pb-1.5 pt-[60px]
         'hidden': openedDropdown != text,
         'opacity-100': openedDropdown == text,
         'bg-none': openedDropdown == text,
