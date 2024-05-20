@@ -1,20 +1,25 @@
 import clsx from 'clsx'
-import { HTMLAttributes, HtmlHTMLAttributes } from 'react'
+import { HTMLAttributeAnchorTarget, HTMLAttributeReferrerPolicy, HTMLAttributes, HtmlHTMLAttributes } from 'react'
 import { twMerge } from 'tailwind-merge'
 import Link from 'next/link'
+import { Url } from 'next/dist/shared/lib/router/router'
 
 export function Button ({
   children,
   className,
   variant = 'ghost',
   href ='',
+  referrerPolicy = 'origin',
+  target='_self',
   onClick
 }: {
   children: React.ReactNode,
   className?: string,
   variant?: 'ghost' | 'fill' | 'outline-fill' | 'dropdown-button' | 'nav-button' | 'hero-button',
   onClick?: () => any,
-  href?: string
+  referrerPolicy?: HTMLAttributeReferrerPolicy,
+  target?: HTMLAttributeAnchorTarget,
+  href?: Url
 }) {
   const button = (
     <button onClick={onClick} className={twMerge(className, 'font-semibold py-2 px-3.5 border-2 rounded-xl transition-all z-30', variants.get(variant ?? 'ghost'))}>
@@ -34,7 +39,7 @@ export function Button ({
   return (
     href == ''
     ? button
-    : <Link href={href}>{button}</Link>
+    : <Link target={target} referrerPolicy={referrerPolicy} href={href}>{button}</Link>
   )
 }
 

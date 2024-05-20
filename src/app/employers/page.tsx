@@ -1,4 +1,4 @@
-import { Hero } from '@/ui/Hero'
+import { Hero } from '@/lib/types/Hero'
 import { MaxWidthWrapper } from '@/ui/MaxWidthWrapper'
 import Image from 'next/image'
 

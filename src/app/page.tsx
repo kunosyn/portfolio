@@ -27,7 +27,7 @@ export default function Page () {
 
           <div className='w-full max-w-screen-md' id='about'>
             <p className='text-lg text-justify'>
-              Hi, I&apos;m <span className='font-bold bg-clip-text text-transparent bg-gradient-to-br from-[#9C89B8] via-[#F0A6CA] to-[#EFC3E6]'>Rain</span>. 
+              Hi, I&apos;m <span className='font-bold bg-clip-text text-transparent bg-gradient-to-br from-[#9C89B8] via-[#F0A6CA] to-[#EFC3E6]'>Rain</span>, aka kunosyn. 
               I am an 18 year old Highschool Graduate and aspiring Software Developer who is currently based in Chicago and preparing for College in the fall. I have <span className='font-bold bg-clip-text text-transparent bg-gradient-to-br from-[#9C89B8] via-[#F0A6CA] to-[#EFC3E6]'>6 years</span> of experience in programming, with it being a fairly large area of my life.
               I hope to bring to you high quality products and make a meaningful impact through technology.
             </p>

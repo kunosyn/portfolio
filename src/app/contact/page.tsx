@@ -1,4 +1,4 @@
-import { Hero } from '@/ui/Hero'
+import { GradientCodeBlocks } from '@/ui/GradientCodeBlocks'
 import { MaxWidthWrapper } from '@/ui/MaxWidthWrapper'
 import Image from 'next/image'
 
@@ -16,9 +16,9 @@ export default function Page () {
           gap-6
           items-center
           justify-center
-          py-[100px]
+          py-[150px]
         '>
-          <h1>Contact Info</h1>
+          <h1><GradientCodeBlocks>Contact Me</GradientCodeBlocks></h1>
           <p>test</p>
       </section>
     </main>

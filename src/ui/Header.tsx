@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { MaxWidthWrapper } from './MaxWidthWrapper'
 import { Button } from './Button'
 import { Dropdown } from './Dropdown'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Open_Sans } from 'next/font/google'
 import { twMerge } from 'tailwind-merge'
 import { MenuIcon } from './MenuIcon'
@@ -18,7 +18,7 @@ export function Header () {
   const [ openedDropdown, setOpenedDropdown ] = useState<'Projects' | 'Roblox Projects' | ''>('')
 
   return (
-    <header className='z-40 fixed w-full py-7 px-6 bg-gradient-to-b from-black to-neutral-950 backdrop-blur-sm shadow-md select-none'>
+    <header className='z-50 fixed w-full py-7 px-6 bg-gradient-to-b from-black via-black/90 to-black/80 backdrop-blur-sm shadow-md select-none'>
       <MaxWidthWrapper className='mx-auto flex items-center'>
         <div className='w-1/2 md:w-1/4 flex justify-start'>
           <Link href='/' className='hover:animate-pulsating-glow'>
@@ -73,7 +73,7 @@ export function Header () {
             Past Employers
           </Button>
 
-          <Button className='flex items-center gap-2 group' variant='nav-button' href='/employers'>
+          <Button className='flex items-center gap-2 group' variant='nav-button' referrerPolicy='no-referrer' target='_blank' href='https://github.com/kunosyn/portfolio/'>
             Repository
           </Button>
         </div>

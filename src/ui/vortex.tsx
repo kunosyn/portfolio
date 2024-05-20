@@ -240,14 +240,14 @@ export const Vortex = (props: VortexProps) => {
   }, [])
 
   return (
-    <div className={cn("relative h-full w-full", props.containerClassName)}>
+    <div className={cn("relative h-full w-full appearance-none", props.containerClassName)}>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         ref={containerRef}
-        className="absolute h-full w-full inset-0 z-0 flex items-center justify-center"
+        className="absolute h-full w-full inset-0 z-0 flex items-center justify-center appearance-none"
       >
-        <canvas ref={canvasRef}></canvas>
+        <canvas className='appearance-none'  ref={canvasRef}></canvas>
       </motion.div>
 
       <div className={cn("relative z-10 bg-transparent", props.className)}>
