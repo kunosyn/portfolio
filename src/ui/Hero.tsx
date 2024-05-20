@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { Vortex } from './Vortex'
 import { WavyBackground } from './WavyBackground'
 
 
