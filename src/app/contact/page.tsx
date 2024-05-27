@@ -10,7 +10,6 @@ export default function Page () {
     bg-neutral-950
     text-white
       min-h-screen
-      max-h-screen
       select-none
     '>
      <section className='
