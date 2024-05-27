@@ -7,7 +7,7 @@ export function Footer () {
     <footer className='flex flex-col gap-4 select-none pt-24 pb-5 px-5 bg-gradient-to-t from-black to-neutral-950 text-white'>
       <div className='flex flex-row gap-3 justify-center'>
         <SocialIcon 
-          href='https://discord.gg/j24GnrzgdK'
+          href='https://discord.com/invite/j24GnrzgdK'
           title='Join the Discord'
           alt='Discord Icon'
           src='discord.svg'
