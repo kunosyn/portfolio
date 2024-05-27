@@ -46,7 +46,7 @@ export default function Page () {
         </div>
       </section>
 
-      <section className='min-h-screen flex items-center'>
+      <section className='min-h-screen flex items-center px-10'>
         <div className='w-full items-center flex flex-col gap-9'>
           <h1 className='md:text-4xl text-3xl' id='pricing'><Gradient.CodeBlocks> Pricing Estimates </Gradient.CodeBlocks></h1>
           <p className='mb-4'>
