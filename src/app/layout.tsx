@@ -7,6 +7,7 @@ import { Header } from '@/ui/Header'
 import { Footer } from '@/ui/Footer'
 
 import './globals.css'
+import NavigationMenu from '@/ui/Navigation'
 
 
 export const metadata = {

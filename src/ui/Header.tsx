@@ -9,6 +9,7 @@ import { useState, useEffect } from 'react'
 import { Open_Sans } from 'next/font/google'
 import { twMerge } from 'tailwind-merge'
 import { MenuIcon } from './MenuIcon'
+import NavigationMenu from './Navigation'
 
 const OpenSans = Open_Sans({
   subsets: ['latin']
@@ -32,7 +33,7 @@ export function Header () {
           </Link>
         </div>
 
-        <div className='w-1/2 hidden justify-center md:flex'>
+        <nav className='w-1/2 hidden justify-center md:flex'>
           <Dropdown
             openedDropdown={openedDropdown}
             setOpenedDropdown={setOpenedDropdown}
@@ -76,7 +77,7 @@ export function Header () {
           <Button className='flex items-center gap-2 group' variant='nav-button' referrerPolicy='no-referrer' target='_blank' href='https://github.com/kunosyn/portfolio/'>
             Repository
           </Button>
-        </div>
+        </nav>
 
         <div className='w-1/4 flex justify-end'>
           <Button className='hidden md:flex items-center gap-3' variant='outline-fill' href='/contact'>

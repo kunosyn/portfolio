@@ -8,9 +8,22 @@ h1 {
 
 * {
   -ms-overflow-style: none;
-  scrollbar-width: none;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 *::-webkit-scrollbar {
-  display: none;
+  width: 15px;
+  z-index: 10;
+}
+
+::-webkit-scrollbar-track {
+  background: #181818;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #303030;
+  border-radius: 5px;
 }

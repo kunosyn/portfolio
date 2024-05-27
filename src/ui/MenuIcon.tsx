@@ -22,6 +22,7 @@ export function MenuIcon ({
     <button
       onClick={handleClick}
       className='flex flex-col text-white md:hidden group justify-end'
+      name='menu'
     >
       <Minus className={twMerge('mt-[-6px] mb-[-26px] transition-all', className, clsx({
         'transform rotate-[45deg] mb-[-32px] mt-0': isOpen
