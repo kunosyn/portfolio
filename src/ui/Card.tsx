@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/util'
 import React from 'react'
-import { ChevronDown, Inbox, Mail } from 'lucide-react'
+import { BadgeDollarSign, ChevronDown, Inbox, Mail } from 'lucide-react'
 
 export function Card (props: ProjectProps | ContactProps) {
   props.animate ??= true
@@ -177,5 +177,7 @@ const cardIcons = new Map<string, React.ReactNode>(Object.entries({
 
   'mail': <Mail className='text-white h-7 w-full align-center mb-2'/>,
 
-  'inbox': <Inbox className='text-white h-7 w-full align-center mb-2' />
+  'inbox': <Inbox className='text-white h-7 w-full align-center mb-2' />,
+
+  'price': <BadgeDollarSign className='text-white h-7 w-full align-center mb-2' />
 }))
