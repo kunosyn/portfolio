@@ -1,21 +1,30 @@
+import { Fira_Code } from 'next/font/google'
+import { twMerge } from 'tailwind-merge'
+
+const firaCode = Fira_Code({
+    subsets: ['latin']
+})
+
 export namespace Gradient {
     export function CodeBlocks ({
         from = '#9C89B8',
         via = '#F0A6CA',
         to = '#EFC3E6',
-        children
+        children,
+        className
     }: {
         from?: string,
         via?: string,
         to?: string,
-        children?: React.ReactNode
+        children?: React.ReactNode,
+        className?: string
     }) {
         return (
-            <>
-                <span className={`bg-clip-text bg-gradient-to-br from-[${from}] via-[${via}] to-[${to}] text-transparent`}>&lt;</span> 
-                {children} 
-                <span className={`bg-clip-text bg-gradient-to-br from-[${from}] via-[${via}] to-[${to}] text-transparent`}>/&gt;</span>
-            </>
+            <span className={twMerge(firaCode.className, 'flex gap-4', className)}>
+                <span className={`bg-clip-text bg-gradient-to-br from-[${from}] via-[${via}] to-[${to}] text-transparent select-none`}>&lt;</span>
+                {children}
+                <span className={`bg-clip-text bg-gradient-to-br from-[${from}] via-[${via}] to-[${to}] text-transparent select-none`}>/&gt;</span>
+            </span>
         )
     }
 
