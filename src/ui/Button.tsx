@@ -30,6 +30,7 @@ export function Button ({
               bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-200
               group-hover:text-black
               group-hover:drop-shadow-[0_2px_2px_rgba(0,0,0,0.45)]
+              select-none
             '>{children}</div>
           : <>{children}</>
       }

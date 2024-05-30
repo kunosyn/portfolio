@@ -1,14 +1,16 @@
 'use client'
 
-import { ArrowRight, BookUser } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import { MaxWidthWrapper } from './MaxWidthWrapper'
 import { Button } from './Button'
 import { Dropdown } from './Dropdown'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Open_Sans } from 'next/font/google'
 import { twMerge } from 'tailwind-merge'
 import { MenuIcon } from './MenuIcon'
+import * as projects from '@/lib/projects.json'
+
 
 const OpenSans = Open_Sans({
   subsets: ['latin']
@@ -32,23 +34,19 @@ export function Header () {
           </Link>
         </div>
 
-        <div className='w-1/2 hidden justify-center md:flex'>
+        <nav className='w-1/2 hidden justify-center md:flex'>
           <Dropdown
             openedDropdown={openedDropdown}
             setOpenedDropdown={setOpenedDropdown}
             text='Projects'
           >
-            <li>
-              <Button variant='dropdown-button' href='/projects/example-one'>
-                Example Project 1
-              </Button>
-            </li>
-
-            <li>
-              <Button variant='dropdown-button' href='/projects/example-two'>
-                Example Project 2
-              </Button>
-            </li>
+            {
+              Object.entries(projects.std).map(([key, value]) => 
+                <Button variant='dropdown-button' href={`/projects/${key}`} key={key}>
+                  {value.displayName}
+                </Button>
+              )
+            }
           </Dropdown>
 
           <Dropdown
@@ -56,17 +54,13 @@ export function Header () {
             setOpenedDropdown={setOpenedDropdown}
             text='Roblox'
           >
-            <li>
-              <Button variant='dropdown-button' href='/projects/example-one'>
-                Example Roblox Project 1
-              </Button>
-            </li>
-
-            <li>
-              <Button variant='dropdown-button' href='/projects/example-two'>
-                Example Roblox Project 2
-              </Button>
-            </li>
+            {
+              Object.entries(projects.rbx).map(([key, value]) => 
+                <Button variant='dropdown-button' href={`/projects/${key}`} key={key}>
+                  {value.displayName}
+                </Button>
+              )
+            }
           </Dropdown>
 
           <Button className='flex items-center gap-2 group' variant='nav-button' href='/employers'>
@@ -76,7 +70,7 @@ export function Header () {
           <Button className='flex items-center gap-2 group' variant='nav-button' referrerPolicy='no-referrer' target='_blank' href='https://github.com/kunosyn/portfolio/'>
             Repository
           </Button>
-        </div>
+        </nav>
 
         <div className='w-1/4 flex justify-end'>
           <Button className='hidden md:flex items-center gap-3' variant='outline-fill' href='/contact'>
