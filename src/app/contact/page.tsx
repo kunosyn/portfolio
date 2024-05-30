@@ -4,6 +4,8 @@ import { MaxWidthWrapper } from '@/ui/MaxWidthWrapper'
 import Image from 'next/image'
 import { DollarSign } from 'lucide-react'
 
+
+
 export default function Page () {
   return (
     <main className='
@@ -11,20 +13,21 @@ export default function Page () {
     bg-neutral-950
     text-white
       min-h-screen
-      select-none
+      flex flex-col
+      gap-16
     '>
      <section className='
         flex flex-col
         gap-9
         items-center
         justify-center
-        py-[150px]
+        pt-[150px]
         px-10
         min-h-screen
       '>
-        <h1 className='text-3xl md:text-4xl'><Gradient.CodeBlocks> Contact Me </Gradient.CodeBlocks></h1>
+        <h1 className='text-3xl md:text-4xl'><Gradient.CodeBlocks>Contact Me</Gradient.CodeBlocks></h1>
         
-        <p className='mb-10'>
+        <p className='mb-5 first-line:md:mb-10'>
           Are you looking to hire me or to pay for a one time commission? Below is my contact information and estimated pricing details.<br/>
           Please note that prices may vary depending on the project! You won&apos;t pay the same amount for a Roblox game as you would a website and vice versa.<br/>
           <Gradient.Text>Thank you for your support as a patron.</Gradient.Text>
@@ -46,9 +49,9 @@ export default function Page () {
         </div>
       </section>
 
-      <section className='min-h-screen flex items-center px-10'>
+      <section className='min-h-screen flex items-center px-5 md:px-10'>
         <div className='w-full items-center flex flex-col gap-9'>
-          <h1 className='md:text-4xl text-3xl' id='pricing'><Gradient.CodeBlocks> Pricing Estimates </Gradient.CodeBlocks></h1>
+          <h1 className='md:text-4xl text-3xl' id='pricing'><Gradient.CodeBlocks>Pricing Estimates</Gradient.CodeBlocks></h1>
           <p className='mb-4'>
             Pricing may vary, the below prices are <Gradient.Text>not</Gradient.Text> set in stone, and will vary on a case by case basis.<br/>
             For exact pricing please contact me with any of my above methods. Pricing may be lower or higher than it appears depending on your needs.<br/>
@@ -177,18 +180,6 @@ export default function Page () {
                   </div>
                 </div>
               </div>
-
-            {/* <Card variant='contact' href='#' title='Small Projects' iconName='price'>
-              Est. $5 ~ $25
-            </Card>
-
-            <Card variant='contact' href='#' title='Medium Projects' iconName='price'>
-              Est. $20 ~ $35
-            </Card>
-
-            <Card variant='contact' href='#' title='Large Projects' iconName='price'>
-              Est. $45 ~ $70
-            </Card> */}
             </div>
           </div>
         </div>
