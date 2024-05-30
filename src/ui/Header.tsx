@@ -1,15 +1,16 @@
 'use client'
 
-import { ArrowRight, BookUser } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import { MaxWidthWrapper } from './MaxWidthWrapper'
 import { Button } from './Button'
 import { Dropdown } from './Dropdown'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Open_Sans } from 'next/font/google'
 import { twMerge } from 'tailwind-merge'
 import { MenuIcon } from './MenuIcon'
-import NavigationMenu from './Navigation'
+import * as projects from '@/lib/projects.json'
+
 
 const OpenSans = Open_Sans({
   subsets: ['latin']
@@ -39,17 +40,13 @@ export function Header () {
             setOpenedDropdown={setOpenedDropdown}
             text='Projects'
           >
-            <li>
-              <Button variant='dropdown-button' href='/projects/example-one'>
-                Example Project 1
-              </Button>
-            </li>
-
-            <li>
-              <Button variant='dropdown-button' href='/projects/example-two'>
-                Example Project 2
-              </Button>
-            </li>
+            {
+              Object.entries(projects.std).map(([key, value]) => 
+                <Button variant='dropdown-button' href={`/projects/${key}`}>
+                  {value.displayName}
+                </Button>
+              )
+            }
           </Dropdown>
 
           <Dropdown
@@ -57,17 +54,13 @@ export function Header () {
             setOpenedDropdown={setOpenedDropdown}
             text='Roblox'
           >
-            <li>
-              <Button variant='dropdown-button' href='/projects/example-one'>
-                Example Roblox Project 1
-              </Button>
-            </li>
-
-            <li>
-              <Button variant='dropdown-button' href='/projects/example-two'>
-                Example Roblox Project 2
-              </Button>
-            </li>
+            {
+              Object.entries(projects.rbx).map(([key, value]) => 
+                <Button variant='dropdown-button' href={`/projects/${key}`}>
+                  {value.displayName}
+                </Button>
+              )
+            }
           </Dropdown>
 
           <Button className='flex items-center gap-2 group' variant='nav-button' href='/employers'>
