@@ -7,6 +7,7 @@ import { cn } from '@/lib/util'
 import React from 'react'
 import { BadgeDollarSign, ChevronDown, Inbox, Mail } from 'lucide-react'
 
+
 export function Card (props: ProjectProps | ContactProps) {
   props.animate ??= true
 
@@ -22,7 +23,7 @@ export function Card (props: ProjectProps | ContactProps) {
 
   if (props.variant == 'project') {
     return (
-      <Link href={props.href} className={cn('relative p-[4px] group', props.containerClassName)}>
+      <CardLink href={props.href} className={cn('relative p-[4px] group', props.containerClassName)}>
         <motion.div
           variants={props.animate ? variants : undefined}
           initial={props.animate ? 'initial' : undefined}
@@ -67,14 +68,18 @@ export function Card (props: ProjectProps | ContactProps) {
         />
   
         <div className={cn('relative z-10 rounded-[22px] p-10 lg:p-4 bg-zinc-900', props.className)}>
-          <Image className='rounded-lg w-full h-auto mb-2' src={`/${props.src}`} width={props.width} height={props.height} alt='Project image.'/>
+          {!React.isValidElement(props.src) ? 
+            <Image className='rounded-lg w-full h-auto mb-2' src={`/${props.src}`} width={props.width} height={props.height} alt='Project image.'/>
+            :
+            props.src
+          }
   
           <aside className='flex flex-col gap-2'>
             <h2 className='font-bold text-lg'>{props.title}</h2>
             <p>{props.description}</p>
           </aside>
         </div>
-      </Link>
+      </CardLink>
     )
   }
   else if (props.variant == 'contact') {
@@ -147,10 +152,10 @@ interface ProjectProps {
   className?: string,
   containerClassName?: string,
   animate?: boolean,
-  src: string,
-  href: string,
-  height: number,
-  width: number,
+  src: string | React.ReactNode,
+  href?: string,
+  height?: number,
+  width?: number,
   title: string,
   description: string
 }
@@ -181,3 +186,12 @@ const cardIcons = new Map<string, React.ReactNode>(Object.entries({
 
   'price': <BadgeDollarSign className='text-white h-7 w-full align-center mb-2' />
 }))
+
+function CardLink (props: { href?: string, className?: string, children: React.ReactNode }) {
+  return props.href ?
+    <Link href={props.href} className={props.className}>
+      {props.children}
+    </Link>
+    :
+    props.children
+}
