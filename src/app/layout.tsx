@@ -5,9 +5,14 @@ import type {
 
 import { Header } from '@/ui/Header'
 import { Footer } from '@/ui/Footer'
+import { DM_Sans } from 'next/font/google'
+import { twMerge } from 'tailwind-merge'
 
 import './globals.css'
-import NavigationMenu from '@/ui/Navigation'
+
+const dmSans = DM_Sans({
+  subsets: ['latin']
+})
 
 
 export const metadata = {
@@ -26,7 +31,7 @@ export default function Layout ({
 }>) {
   return (
     <html lang='en'>
-      <body className='subpixel-antialiased'>
+      <body className={twMerge(dmSans.className, 'subpixel-antialiased text-white')}>
         <Header />
         {children}
         <Footer />
