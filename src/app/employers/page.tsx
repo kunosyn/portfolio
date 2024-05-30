@@ -11,7 +11,9 @@ export default function Page () {
         items-center
         justify-center
       '>
-        test
+        <div className='flex gap-6'>
+          
+        </div>
       </MaxWidthWrapper>
     </main>
   )
