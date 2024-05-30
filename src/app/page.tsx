@@ -5,7 +5,7 @@ import { Gradient } from '@/ui/Gradient'
 
 export default function Page () {
   return (
-    <main className='z-0 overflow-x-hidden select-none'>
+    <main className='z-0 overflow-x-hidden'>
       <Hero/>
 
       <section className='
@@ -14,8 +14,7 @@ export default function Page () {
         justify-center 
         bg-neutral-950 
         px-1 py-2 
-        text-white 
-        select-none
+        text-white
       '>
         <MaxWidthWrapper className='py-16 px-6 md:px-24 flex flex-col items-center gap-6'>
           <div>
