@@ -1,0 +1,25 @@
+{
+  "rbx": {
+    "project-one": {
+      "displayName": "Project One",
+      "description": "This is my first project's description!"
+    },
+
+    "project-two": {
+      "displayName": "Project Two",
+      "description": "This is my second project's description!"
+    }
+  },
+
+  "std": {
+    "project-one": {
+      "displayName": "Project One",
+      "description": "This is my first project's description!"
+    },
+
+    "project-two": {
+      "displayName": "Project Two",
+      "description": "This is my second project's description!"
+    }
+  }
+}
