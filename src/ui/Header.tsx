@@ -42,7 +42,7 @@ export function Header () {
           >
             {
               Object.entries(projects.std).map(([key, value]) => 
-                <Button variant='dropdown-button' href={`/projects/${key}`}>
+                <Button variant='dropdown-button' href={`/projects/${key}`} key={key}>
                   {value.displayName}
                 </Button>
               )
@@ -56,7 +56,7 @@ export function Header () {
           >
             {
               Object.entries(projects.rbx).map(([key, value]) => 
-                <Button variant='dropdown-button' href={`/projects/${key}`}>
+                <Button variant='dropdown-button' href={`/projects/${key}`} key={key}>
                   {value.displayName}
                 </Button>
               )

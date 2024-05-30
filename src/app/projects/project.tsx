@@ -31,7 +31,7 @@ export default function Project ({
             flex gap-4
           '>
             {project!.cards?.map(p => 
-              <Card variant='project' src={p.icon} title={p.title} description={p.description} />
+              <Card variant='project' src={p.icon} title={p.title} description={p.description} key={project!.cards?.indexOf(p)}/>
             )}
           </div>
 
