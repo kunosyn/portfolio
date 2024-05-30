@@ -21,7 +21,7 @@ export function Hero () {
           absolute z-50 inset-0
           flex flex-col items-center justify-center 
           text-white font-bold text-center
-          pointer-events-none px-4 
+          px-4 
           gap-5 lg:gap-3 md:gap-3
         '>
           <p className='
@@ -43,7 +43,7 @@ export function Hero () {
             Specializing in: Python, TypeScript, JavaScript, C++, Luau, and more.
           </p>
 
-          <Link href='/contact' className='mt-32 md:mt-6 pointer-events-auto bg-gradient-to-br from-[#9C89B8] via-[#F0A6CA] to-[#EFC3E6] p-1 rounded-full group'>
+          <Link href='/contact' className='mt-32 md:mt-6 select-none bg-gradient-to-br from-[#9C89B8] via-[#F0A6CA] to-[#EFC3E6] p-1 rounded-full group'>
             <div className='bg-black px-7 py-2.5 rounded-full transition-all duration-300 group-hover:bg-opacity-0'>
               Contact Me
             </div>
