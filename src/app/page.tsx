@@ -1,9 +1,21 @@
+'use client'
+
 import { Card } from '@/ui/Card'
 import { Hero } from '@/ui/Hero'
 import { MaxWidthWrapper } from '@/ui/MaxWidthWrapper'
 import { Gradient } from '@/ui/Gradient'
+import projects from '@/lib/projects.json'
+import { ProjectEntry } from '@/lib/types'
+import { useEffect, useState } from 'react'
+
+const rbx = projects.rbx, std = projects.std
+
 
 export default function Page () {
+  let [ displayedProjects, setDisplayedProjects] = useState<Array<[ string, ProjectEntry ]>>()
+  useEffect(() => setDisplayedProjects(getRandomProjects()), [])
+
+
   return (
     <main className='z-0 overflow-x-hidden'>
       <Hero/>
@@ -84,11 +96,41 @@ export default function Page () {
           <h1><Gradient.CodeBlocks>Featured</Gradient.CodeBlocks></h1>
 
           <div className='w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 2xl:grid-cols-2 gap-4'>
-            <Card variant='project' href='/projects/example-one' src='placeholder.png' title='My Project' description='This is my very cool totally existent project that has an unreasonably long name just for testing purposes.' width={1853} height={829} />
-            <Card variant='project' href='/projects/example-one' src='placeholder.png' title='My Project' description='This is my very cool totally existent project that has an unreasonably long name just for testing purposes.' width={1853} height={829} />
+            {
+              displayedProjects?.map(([key, value]) => 
+              <Card
+                variant='project'
+                key={key}
+
+                src={value.displaySrc}
+                width={value.displayWidth}
+                height={value.displayHeight}
+
+                href={`/projects${key}`} 
+                title={value.displayName} 
+                description={value.description} 
+              />)
+            }
           </div>
         </MaxWidthWrapper>
       </section>
     </main>
   )
+}
+
+function getRandomProjects (): Array<[string, ProjectEntry]> {
+  let returned: Array<[string, ProjectEntry]> = []
+  let stdProjects = Object.entries(std), rbxProjects = Object.entries(rbx)
+  let min = 2, max = 4;
+  
+  for (let i = 0; i < Math.floor(Math.random() * (max - min + 1)) + min; i++) {
+    let projectType = Math.random() > .5 ? 'std' : 'rbx'
+
+    let projectList = projectType == 'std' ? stdProjects : rbxProjects
+    let chosenProject = projectList[Math.floor(Math.random() * projectList.length)]
+
+    returned.push([projectType == 'rbx' ? `/roblox/?project=${chosenProject[0]}` : `?project=${chosenProject[0]}`, chosenProject[1]])
+  }
+
+  return returned
 }
