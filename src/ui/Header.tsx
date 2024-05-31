@@ -2,6 +2,7 @@
 
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { MaxWidthWrapper } from './MaxWidthWrapper'
 import { Button } from './Button'
 import { Dropdown } from './Dropdown'
@@ -9,28 +10,27 @@ import { useState } from 'react'
 import { Open_Sans } from 'next/font/google'
 import { twMerge } from 'tailwind-merge'
 import { MenuIcon } from './MenuIcon'
-import * as projects from '@/lib/projects.json'
+import projects from '@/lib/projects.json'
 
 
-const OpenSans = Open_Sans({
-  subsets: ['latin']
-})
+const std = projects.std, rbx = projects.rbx
+
 
 export function Header () {
   const [ openedDropdown, setOpenedDropdown ] = useState<'Projects' | 'Roblox Projects' | ''>('')
 
   return (
-    <header className='z-50 fixed w-full py-7 px-6 bg-gradient-to-b from-black via-black/90 to-black/80 backdrop-blur-sm shadow-md select-none'>
+    <header className='z-50 fixed w-full py-2 px-6 bg-gradient-to-b from-black via-black/90 to-black/80 backdrop-blur-sm shadow-md select-none'>
       <MaxWidthWrapper className='mx-auto flex items-center'>
         <div className='w-1/2 md:w-1/4 flex justify-start'>
           <Link href='/' className='hover:animate-pulsating-glow'>
-            <h1 className={
-              twMerge(
-                OpenSans.className,
-                'text-white lg:text-[1.5em] md:text-xl text-lg'
-            )}>
-                kunosyn
-              </h1>
+            <Image 
+              src='/logotransparent.webp'
+              width={1600}
+              height={1600}
+              alt='kunosyn'
+              className='rounded-3xl h-24 w-24 select-none overflow-hidden'
+            />
           </Link>
         </div>
 
@@ -41,8 +41,8 @@ export function Header () {
             text='Projects'
           >
             {
-              Object.entries(projects.std).map(([key, value]) => 
-                <Button variant='dropdown-button' href={`/projects/${key}`} key={key}>
+              Object.entries(std).map(([key, value]) => 
+                <Button variant='dropdown-button' href={`/projects?project=${key}`} key={key}>
                   {value.displayName}
                 </Button>
               )
@@ -55,8 +55,8 @@ export function Header () {
             text='Roblox'
           >
             {
-              Object.entries(projects.rbx).map(([key, value]) => 
-                <Button variant='dropdown-button' href={`/projects/${key}`} key={key}>
+              Object.entries(rbx).map(([key, value]) => 
+                <Button variant='dropdown-button' href={`/projects/roblox?project=${key}`} key={key}>
                   {value.displayName}
                 </Button>
               )
