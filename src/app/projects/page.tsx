@@ -16,7 +16,7 @@ function SearchedProject () {
 
   const project: ProjectEntry = projects.std[searchedProject]
   
-  if (project !== undefined) <Project project={project} />
+  if (project !== undefined) return <Project project={project} />
   return <NotFound />
 }
 
