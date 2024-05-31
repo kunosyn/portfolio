@@ -2,24 +2,66 @@
   "rbx": {
     "project-one": {
       "displayName": "Project One",
-      "description": "This is my first project's description!"
+      "description": "This is my first project's description!",
+
+      "displayWidth": 1853,
+      "displayHeight": 829,
+      "displaySrc": "placeholder.png",
+
+      "images": [
+        { 
+          "src": "/placeholder.png",
+          "width": 1853,
+          "height": 829,
+          "alt": "Placeholder Image",
+          "className": "w-[100px] h-[80px]"
+        },
+
+        { 
+          "src": "/placeholder.png",
+          "width": 1853,
+          "height": 829,
+          "alt": "Placeholder Image",
+          "className": "w-[100px] h-[80px]"
+        },
+
+        { 
+          "src": "/placeholder.png",
+          "width": 1853,
+          "height": 829,
+          "alt": "Placeholder Image",
+          "className": "w-[100px] h-[80px]"
+        }
+      ]
     },
 
     "project-two": {
       "displayName": "Project Two",
-      "description": "This is my second project's description!"
+      "description": "This is my second project's description!",
+
+      "displayWidth": 1853,
+      "displayHeight": 829,
+      "displaySrc": "placeholder.png"
     }
   },
 
   "std": {
     "project-one": {
       "displayName": "Project One",
-      "description": "This is my first project's description!"
+      "description": "This is my first project's description!",
+
+      "displayWidth": 1853,
+      "displayHeight": 829,
+      "displaySrc": "placeholder.png"
     },
 
     "project-two": {
       "displayName": "Project Two",
-      "description": "This is my second project's description!"
+      "description": "This is my second project's description!",
+
+      "displayWidth": 1853,
+      "displayHeight": 829,
+      "displaySrc": "placeholder.png"
     }
   }
 }
