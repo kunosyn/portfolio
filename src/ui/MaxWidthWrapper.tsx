@@ -1,4 +1,3 @@
-// Download this package.
 import { twMerge } from 'tailwind-merge'
 
 export function MaxWidthWrapper ({
