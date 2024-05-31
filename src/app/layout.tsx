@@ -18,7 +18,8 @@ const dmSans = DM_Sans({
 export const metadata = {
   title: 'kunosyn - Portfolio',
   description: 'Your go to freelance developer for web development, roblox game development, and more!',
-
+  metadataBase: new URL('https://kunosyn.com'),
+  
   openGraph: {
     title: 'kunosyn\'s portfolio',
     description: 'Your go to freelance developer for web development, roblox game development, and more!',
