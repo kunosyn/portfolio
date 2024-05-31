@@ -1,7 +1,5 @@
 import { Gradient } from '@/ui/Gradient'
 import { Card } from '@/ui/Card'
-import { MaxWidthWrapper } from '@/ui/MaxWidthWrapper'
-import Image from 'next/image'
 import { DollarSign } from 'lucide-react'
 
 
