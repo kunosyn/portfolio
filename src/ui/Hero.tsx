@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import Image from 'next/image'
+
 import { WavyBackground } from './WavyBackground'
 
 
@@ -24,14 +26,14 @@ export function Hero () {
           px-4 
           gap-5 lg:gap-3 md:gap-3
         '>
-          <p className='
+          <h1 className='
             py-4
             drop-shadow-[0_3px_3px_rgba(0,0,0,0.4)]
             text-6xl lg:text-7xl md:text-5xl  
             text-white
           '>
             Your go-to freelance developer
-          </p>
+          </h1>
           
           <p className='
             text-[1.2em] pb-1 px-6
