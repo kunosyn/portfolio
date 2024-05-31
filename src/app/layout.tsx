@@ -17,12 +17,19 @@ const dmSans = DM_Sans({
 
 export const metadata = {
   title: 'kunosyn - Portfolio',
-  description: '',
+  description: 'Your go to freelance developer for web development, roblox game development, and more!',
+
+  openGraph: {
+    title: 'kunosyn\'s portfolio',
+    description: 'Your go to freelance developer for web development, roblox game development, and more!',
+    images: [ '/logo.png' ]
+  }
 } satisfies Metadata
 
 export const viewport = {
-  themeColor: '#f00'
+  themeColor: '#c08fdb'
 } satisfies Viewport
+
 
 export default function Layout ({
   children,
