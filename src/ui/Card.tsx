@@ -1,15 +1,13 @@
-'use client'
-
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/util'
 import React from 'react'
-import { BadgeDollarSign, ChevronDown, Inbox, Mail } from 'lucide-react'
+import { BadgeDollarSign, Inbox, Mail } from 'lucide-react'
 
 
 export function Card (props: ProjectProps | ContactProps) {
-  props.animate ??= true
+  const animate = props.animate ?? true
 
   const variants = {
     initial: {
@@ -20,16 +18,16 @@ export function Card (props: ProjectProps | ContactProps) {
       backgroundPosition: ['0, 50%', '100% 50%', '0 50%'],
     },
   }
-
+  
   if (props.variant == 'project') {
     return (
       <CardLink href={props.href} className={cn('relative p-[4px] group', props.containerClassName)}>
         <motion.div
-          variants={props.animate ? variants : undefined}
-          initial={props.animate ? 'initial' : undefined}
-          animate={props.animate ? 'animate' : undefined}
+          variants={animate ? variants : undefined}
+          initial={animate ? 'initial' : undefined}
+          animate={animate ? 'animate' : undefined}
           transition={
-            props.animate
+            animate
               ? {
                   duration: 5,
                   repeat: Infinity,
@@ -38,7 +36,7 @@ export function Card (props: ProjectProps | ContactProps) {
               : undefined
           }
           style={{
-            backgroundSize: props.animate ? '400% 400%' : undefined,
+            backgroundSize: animate ? '400% 400%' : undefined,
           }}
           className={cn(
             'absolute inset-0 rounded-3xl z-[1] opacity-60 group-hover:opacity-100 blur-xl  transition duration-500 will-change-transform',
@@ -46,11 +44,11 @@ export function Card (props: ProjectProps | ContactProps) {
           )}
         />
         <motion.div
-          variants={props.animate ? variants : undefined}
-          initial={props.animate ? 'initial' : undefined}
-          animate={props.animate ? 'animate' : undefined}
+          variants={animate ? variants : undefined}
+          initial={animate ? 'initial' : undefined}
+          animate={animate ? 'animate' : undefined}
           transition={
-            props.animate
+            animate
               ? {
                   duration: 5,
                   repeat: Infinity,
@@ -59,7 +57,7 @@ export function Card (props: ProjectProps | ContactProps) {
               : undefined
           }
           style={{
-            backgroundSize: props.animate ? '400% 400%' : undefined,
+            backgroundSize: animate ? '400% 400%' : undefined,
           }}
           className={cn(
             'absolute inset-0 rounded-3xl z-[1] will-change-transform',
@@ -67,9 +65,9 @@ export function Card (props: ProjectProps | ContactProps) {
           )}
         />
   
-        <div className={cn('relative z-10 rounded-[22px] p-10 lg:p-4 bg-zinc-900', props.className)}>
+        <div className={cn('relative z-10 rounded-[22px] p-3 lg:p-4 bg-zinc-900', props.className)}>
           {!React.isValidElement(props.src) ? 
-            <Image className='rounded-lg w-full h-auto mb-2' src={`/${props.src}`} width={props.width} height={props.height} alt='Project image.'/>
+            <Image className='rounded-lg w-full h-auto mb-2' src={`/${props.src}`} width={props!.width} height={props!.height} alt='Project image.'/>
             :
             props.src
           }
@@ -86,11 +84,11 @@ export function Card (props: ProjectProps | ContactProps) {
     return (
       <Link href={props.href} className={cn('relative p-[4px] group', props.containerClassName)}>
         <motion.div
-          variants={props.animate ? variants : undefined}
-          initial={props.animate ? 'initial' : undefined}
-          animate={props.animate ? 'animate' : undefined}
+          variants={animate ? variants : undefined}
+          initial={animate ? 'initial' : undefined}
+          animate={animate ? 'animate' : undefined}
           transition={
-            props.animate
+            animate
               ? {
                   duration: 5,
                   repeat: Infinity,
@@ -99,7 +97,7 @@ export function Card (props: ProjectProps | ContactProps) {
               : undefined
           }
           style={{
-            backgroundSize: props.animate ? '400% 400%' : undefined,
+            backgroundSize: animate ? '400% 400%' : undefined,
           }}
           className={cn(
             'absolute inset-0 rounded-3xl z-[1] opacity-60 group-hover:opacity-100 blur-xl  transition duration-500 will-change-transform',
@@ -107,11 +105,11 @@ export function Card (props: ProjectProps | ContactProps) {
           )}
         />
         <motion.div
-          variants={props.animate ? variants : undefined}
-          initial={props.animate ? 'initial' : undefined}
-          animate={props.animate ? 'animate' : undefined}
+          variants={animate ? variants : undefined}
+          initial={animate ? 'initial' : undefined}
+          animate={animate ? 'animate' : undefined}
           transition={
-            props.animate
+            animate
               ? {
                   duration: 5,
                   repeat: Infinity,
@@ -120,7 +118,7 @@ export function Card (props: ProjectProps | ContactProps) {
               : undefined
           }
           style={{
-            backgroundSize: props.animate ? '400% 400%' : undefined,
+            backgroundSize: animate ? '400% 400%' : undefined,
           }}
           className={cn(
             'absolute inset-0 rounded-3xl z-[1] will-change-transform',
