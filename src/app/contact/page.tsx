@@ -1,8 +1,8 @@
+'use client'
+
 import { Gradient } from '@/ui/Gradient'
 import { Card } from '@/ui/Card'
 import { DollarSign } from 'lucide-react'
-
-
 
 export default function Page () {
   return (
