@@ -14,8 +14,9 @@ const rbx = projects.rbx, std = projects.std
 export default function Page () {
   let [ displayedProjects, setDisplayedProjects] = useState<Array<[ string, ProjectEntry ]>>()
   useEffect(() => setDisplayedProjects(getRandomProjects()), [])
+  let index = 0
 
-
+  
   return (
     <main className='z-0 overflow-x-hidden'>
       <Hero/>
@@ -97,31 +98,34 @@ export default function Page () {
 
           <div className='w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 2xl:grid-cols-2 gap-4'>
             {
-              displayedProjects?.map(([key, value]) => 
-              <Card
-                variant='project'
-                key={key}
+              displayedProjects?.map(([key, value]) =>  {
+                index++
 
-                src={value.displaySrc}
-                width={value.displayWidth}
-                height={value.displayHeight}
+                return (<Card
+                  variant='project'
+                  key={index}
 
-                href={`/projects${key}`} 
-                title={value.displayName} 
-                description={value.description} 
-              />)
+                  src={value.displaySrc}
+                  width={value.displayWidth}
+                  height={value.displayHeight}
+
+                  href={`/projects${key}`} 
+                  title={value.displayName} 
+                  description={value.description} 
+                />)
+              })
             }
           </div>
         </MaxWidthWrapper>
       </section>
     </main>
-  )
+  ) 
 }
 
 function getRandomProjects (): Array<[string, ProjectEntry]> {
   let returned: Array<[string, ProjectEntry]> = []
   let stdProjects = Object.entries(std), rbxProjects = Object.entries(rbx)
-  let min = 2, max = 4;
+  let min = 2, max = 4
   
   for (let i = 0; i < Math.floor(Math.random() * (max - min + 1)) + min; i++) {
     let projectType = Math.random() > .5 ? 'std' : 'rbx'

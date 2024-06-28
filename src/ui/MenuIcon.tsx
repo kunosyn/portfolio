@@ -1,20 +1,31 @@
 'use client'
 
-import { useState } from 'react'
 import { Minus } from 'lucide-react'
 import { twMerge } from 'tailwind-merge'
 import clsx from 'clsx'
 
 export function MenuIcon ({
   onClick,
-  className
+  className,
+  isOpen,
+  setIsOpen
 }: {
   onClick?: () => void,
+  isOpen: boolean,
+  setIsOpen: ( isOpen: boolean ) => void,
   className?: string
 }) {
-  const [isOpen, setIsOpen] = useState(false)
-
   function handleClick () {
+    if (onClick) onClick()
+    let classList = document.body.classList
+    
+    if (!isOpen) {
+      scrollTo(0, 0)
+      classList.add('overflow-hidden')
+    } else {
+      classList.remove('overflow-hidden')
+    }
+
     setIsOpen(!isOpen)
   }
 

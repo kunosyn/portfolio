@@ -17,12 +17,12 @@ export default function Project ({
 }) {
   return (
     <main className='
-      z-0 overflow-x-hidden 
+      z-0
       bg-neutral-950 
       flex justify-center
     '>
       <MaxWidthWrapper className='
-        min-h-screen max-h-screen 
+        min-h-screen
         flex flex-col gap-6
         pt-[200px]
         items-center
@@ -48,7 +48,7 @@ export default function Project ({
             items-center justify-center
             flex-wrap
           '>
-            {project.images?.map(image => <Image className={image.className} src={image.src} width={image.width} height={image.height} alt={image.alt} key={project.images?.indexOf(image)} />)}
+            {project.images?.map(image => <Image className={image.className?.toString()} src={image.src} width={image.width} height={image.height} alt={image.alt} key={project.images?.indexOf(image)} />)}
 
             {project.videos?.map(video => 
               <Suspense fallback={<p>Video loading...</p>} key={project.videos?.indexOf(video)}>

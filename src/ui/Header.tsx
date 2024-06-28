@@ -7,8 +7,6 @@ import { MaxWidthWrapper } from './MaxWidthWrapper'
 import { Button } from './Button'
 import { Dropdown } from './Dropdown'
 import { useState } from 'react'
-import { Open_Sans } from 'next/font/google'
-import { twMerge } from 'tailwind-merge'
 import { MenuIcon } from './MenuIcon'
 import projects from '@/lib/projects.json'
 
@@ -16,11 +14,17 @@ import projects from '@/lib/projects.json'
 const std = projects.std, rbx = projects.rbx
 
 
-export function Header () {
+export function Header ({
+  isOpen,
+  setIsOpen
+}: {
+  isOpen: boolean,
+  setIsOpen: ( isOpen: boolean ) => void
+}) {
   const [ openedDropdown, setOpenedDropdown ] = useState<'Projects' | 'Roblox Projects' | ''>('')
 
   return (
-    <header className='z-50 fixed w-full py-2 px-6 bg-gradient-to-b from-black via-black/90 to-black/80 backdrop-blur-sm shadow-md select-none'>
+    <header className='z-50 w-full py-2 px-6 bg-gradient-to-b from-black via-black/90 to-black/80 backdrop-blur-sm shadow-md select-none'>
       <MaxWidthWrapper className='mx-auto flex items-center'>
         <div className='w-1/2 md:w-1/4 flex justify-start'>
           <Link href='/' className='hover:animate-pulsating-glow'>
@@ -80,7 +84,7 @@ export function Header () {
         </div>
         
         <div className='w-1/2 flex md:hidden justify-end'>
-          <MenuIcon className='w-8 h-8' />
+          <MenuIcon className='w-8 h-8' isOpen={isOpen} setIsOpen={setIsOpen} />
         </div>
       </MaxWidthWrapper>
     </header>

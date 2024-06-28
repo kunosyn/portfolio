@@ -3,12 +3,16 @@ import type {
   Viewport
 } from 'next'
 
-import { Header } from '@/ui/Header'
+import React from 'react'
+
+
+import { Navigation } from '@/ui/Navigation'
 import { Footer } from '@/ui/Footer'
 import { DM_Sans } from 'next/font/google'
 import { twMerge } from 'tailwind-merge'
 
 import './globals.css'
+
 
 const dmSans = DM_Sans({
   subsets: ['latin']
@@ -40,7 +44,7 @@ export default function Layout ({
   return (
     <html lang='en'>
       <body className={twMerge(dmSans.className, 'subpixel-antialiased text-white')}>
-        <Header />
+        <Navigation />
         {children}
         <Footer />
       </body>

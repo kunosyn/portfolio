@@ -14,7 +14,7 @@
           "width": 1853,
           "height": 829,
           "alt": "Placeholder Image",
-          "className": "w-[100px] h-[80px]"
+          "className": "max-w-[200px] max-h-[200px]"
         },
 
         { 
